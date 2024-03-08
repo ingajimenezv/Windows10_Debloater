@@ -1,90 +1,189 @@
-# Windows10_Debloater
-Elimina todas las app que vienen por default al instalar win10
-Debloatador de Windows10
-hecho con powershell Licencia: MIT
+# Windows10Debloater
 
-Script/Utilidad/Aplicación para desbloquear Windows 10, eliminar aplicaciones innecesarias preinstaladas de Windows, detener algunas funciones de telemetría, evitar que Cortana se use como índice de búsqueda, deshabilitar tareas programadas innecesarias y más...
+[![made-with-powershell](https://img.shields.io/badge/PowerShell-1f425f?logo=Powershell)](https://microsoft.com/PowerShell)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Dona una taza de café
-Cómprame un café
+Script/Utility/Application to debloat Windows 10, to remove Windows pre-installed unnecessary applications, stop some telemetry functions, stop Cortana from being used as your Search Index, disable unnecessary scheduled tasks, and more...
 
-Asegúrese de consultar los GitHubs de los contribuyentes para ver si también tienen patrocinio de GitHub, ya que han contribuido a este proyecto de código abierto. ( https://github.com/Sycnex/Windows10Debloater/graphs/contributors )
+## Donate a cup of coffee
+<a href="https://www.buymeacoffee.com/HZNh7w1Bm" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
-Descargo de responsabilidad
-ADVERTENCIA: ¡ NO me hago responsable de lo que pueda sucederle a su sistema! ¡Ejecute scripts bajo su propia responsabilidad! Además, otras variantes de este repositorio no son técnicamente versiones "nuevas" de este, pero son diferentes en sus respectivas formas. Hay algunos sitios que dicen que otros proyectos son versiones "nuevas" de esto, pero eso es inexacto.
+Be sure to look at the Contributors' GitHubs to see if they have GitHub sponsorships as well since they have contributed to this open-source project. (https://github.com/Sycnex/Windows10Debloater/graphs/contributors)
 
-Cómo ejecutar los archivos Windows10Debloater.ps1 y Windows10DebloaterGUI.ps1
-Existen diferentes métodos para ejecutar el script de PowerShell. Los métodos son los siguientes:
+## Disclaimer
 
-Primer método
-Descargue el archivo .zip en la página principal de GitHub y extraiga el archivo .zip a la ubicación deseada
-Una vez extraído, abra PowerShell (o PowerShell ISE ) como administrador
-Habilitar la ejecución de PowerShell Set-ExecutionPolicy Unrestricted -Force
-Cuando se le solicite, cambie al directorio donde extrajo los archivos: por ejemplo, -cd c:\temp
-A continuación, para ejecutar cualquiera de los scripts, ingrese lo siguiente: por ejemplo, -.\Windows10DebloaterGUI.ps1
-Segundo método
-Descargue el archivo .zip en la página principal de GitHub y extraiga el archivo .zip a la ubicación deseada
-Haga clic derecho en el archivo PowerShell que desea ejecutar y haga clic en "Ejecutar con PowerShell".
-Esto permitirá que el script se ejecute sin tener que realizar los pasos anteriores, pero Powershell le preguntará si está seguro de que desea ejecutar este script.
-Recuerde que este script NECESITA ejecutarse como administrador para funcionar correctamente.
+**WARNING:** I do **NOT** take responsibility for what may happen to your system! Run scripts at your own risk!
+Also, other variants of this repo are not technically "new" versions of this, but they are different in their own respective ways. There are some sites saying that other projects are "new" versions of this, but that is inaccurate. 
 
-Cómo ejecutar el archivo Windows10SysPrepDebloater.ps1
-Para el archivo WindowsSysPrepDebloater.ps1, hay un par de parámetros que puede ejecutar para especificar qué funciones se utilizan. Los parámetros son -SysPrep: -Debloaty -Privacy.
+## How To Run the Windows10Debloater.ps1 and the Windows10DebloaterGUI.ps1 files
 
-Para ejecutar esto con parámetros, haga lo siguiente:
+There are different methods of running the PowerShell script. The methods are as follows:
 
-Descargue el archivo .zip en la página principal de GitHub y extraiga el archivo .zip a la ubicación deseada
-Una vez extraído, abra PowerShell (o PowerShell ISE ) como administrador
-Cuando se le solicite, cambie al directorio donde extrajo los archivos: por ejemplo, -cd c:\temp
-A continuación, para ejecutar cualquiera de los scripts, ingrese lo siguiente:
-p.ej -.\Windows10SysPrepDebloater.ps1 -Sysprep -Debloat -Privacy
+### First Method
 
-Aplicación Sysprep, interactiva y GUI
-Ahora hay 3 versiones de Windows10Debloater : hay una versión interactiva, una versión de aplicación GUI y una versión puramente silenciosa.
+1) Download the .zip file on the main page of the GitHub and extract the .zip file to your desired location
+2) Once extracted, open [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-5.1) (or [PowerShell ISE](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise?view=powershell-7)) as an Administrator
+3) Enable PowerShell execution
+<code>Set-ExecutionPolicy Unrestricted -Force</code>
+4) On the prompt, change to the directory where you extracted the files:
+  e.g. - `cd c:\temp`
+5) Next, to run either script, enter in the following:
+  e.g. - `.\Windows10DebloaterGUI.ps1`
 
-Windows10SysPrepDebloater.ps1-> La versión silenciosa ahora utiliza los parámetros de cambio: -Sysprep, -Debloat -Privacy. La versión silenciosa puede ser útil para implementar imágenes MDT/sysprepping o cualquier otra forma de implementar Windows 10. Esto funcionará para eliminar el bloatware durante el proceso de implementación.
+### Second Method
 
-Windows10Debloater.ps1-> Esta versión interactiva es lo que implica: un script Windows10Debloater con indicaciones interactivas. Éste no debe usarse para implementaciones que requieran un script silencioso con parámetros opcionales. Este script le ofrece opciones con indicaciones a medida que se ejecuta para que pueda elegir lo que hace el script.
+1) Download the .zip file on the main page of the GitHub and extract the .zip file to your desired location
+2) Right-click the PowerShell file that you'd like to run and click on "Run With PowerShell"
+3) This will allow the script to run without having to do the above steps but Powershell will ask if you're sure you want to run this script.
 
-Windows10DebloaterGUI.ps1-> Ahora hay una aplicación GUI llamada Windows10DebloaterGUI.ps1 con botones para realizar todas las funciones que realizan los scripts. Esto es mejor para el usuario promedio que no quiere trabajar con código o si prefiere simplemente ver la pantalla de una aplicación.
+Remember this script **NEEDS** to be run as admin in order to function properly.
 
-Cambiar parámetros
-Hay 3 parámetros de cambio en el Windows10SysPrepDebloater.ps1script.
+## How To Run the Windows10SysPrepDebloater.ps1 file
 
--SysPrep, que ejecuta el comando dentro de una función: get-appxpackage | eliminar-appxpackage. Esto es útil ya que algunos administradores necesitan que ese comando se ejecute primero para que las máquinas puedan aprovisionar correctamente las aplicaciones para su eliminación.
+For the WindowsSysPrepDebloater.ps1 file, there are a couple of parameters that you can run so that you can specify which functions are used. The parameters are:
+`-SysPrep`, `-Debloat` and `-Privacy`.
 
--Debloat, cambie el parámetro que hace lo que sugiere. Ejecuta las siguientes funciones: Iniciar-Desbloat, Quitar claves y Proteger-Privacidad. Remove-Keys elimina las claves de registro sobrantes que están asociadas con las aplicaciones de bloatware enumeradas anteriormente, pero que no se eliminan durante la función Start-Debloat.
+To run this with parameters, do the following:
 
--Privacy, agrega y/o cambia claves de registro para detener algunas funciones de telemetría, evita que Cortana se use como índice de búsqueda, desactiva tareas programadas "innecesarias" y más.
+1) Download the .zip file on the main page of the GitHub and extract the .zip file to your desired location
+2) Once extracted, open [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-5.1) (or [PowerShell ISE](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise?view=powershell-7)) as an Administrator
+3) On the prompt, change to the directory where you extracted the files:
+  e.g. - `cd c:\temp`
+4) Next, to run either script, enter in the following:
 
-Este script eliminará el bloatware de Windows 10 cuando se use Remove-AppXPackage/Remove-AppXProvisionedPackage y luego eliminará claves de registro específicas que no se eliminaron de antemano. Para obtener mejores resultados, este script debe ejecutarse antes de configurar un perfil de usuario; de lo contrario, es probable que vea que las aplicaciones que deberían haberse eliminado permanecerán y, si se eliminan, encontrará mosaicos rotos en el menú de inicio.
+  e.g. - `.\Windows10SysPrepDebloater.ps1 -Sysprep -Debloat -Privacy`
 
-Estas claves de registro son
-EclipseManager, ActiproSoftwareLLC, Microsoft.PPIProjection, Microsoft.XboxGameCallableUI
 
-Puede elegir entre 'Desinflar' o 'Revertir'. Dependiendo de su elección, cualquiera de los dos ejecutará un código específico para desbloquear su máquina con Windows 10.
+## Sysprep, Interactive, and GUI Application
 
-La opción del interruptor Debloat ejecuta las siguientes funciones
-Desbloat, Remove-Keys, Protect-Privacy, Stop-EdgePDF (si se elige)
+There are now 3 versions of **Windows10Debloater** - There is an interactive version, a GUI app version, and a pure silent version.
 
-La opción Revertir interruptor ejecuta las siguientes funciones
-Revertir cambios, habilitar EdgePDF
+- **`Windows10SysPrepDebloater.ps1`** -> The silent version now utilizes the switch parameters: -Sysprep, -Debloat -Privacy. The silent version can be useful for deploying MDT Images/sysprepping or any other way you deploy Windows 10. This will work to remove the bloatware during the deployment process.
 
-La opción Revertir reinstala el bloatware y cambia las claves de registro a las predeterminadas.
+- **`Windows10Debloater.ps1`** -> This interactive version is what it implies - a Windows10Debloater script with interactive prompts. This one should not be used for deployments that require a silent script with optional parameters. This script gives you choices with prompts as it runs so that you can make the choices of what the script does.
 
-Las tareas programadas que están deshabilitadas son
-XblGameSaveTaskLogon, XblGameSaveTask, Consolidator, UsbCeip, DmClient
+- **`Windows10DebloaterGUI.ps1`** -> There is now a GUI Application named Windows10DebloaterGUI.ps1 with buttons to perform all of the functions that the scripts do. This is better for the average user who does not want to work with code, or if you'd prefer to just see an application screen. 
 
-Estas tareas programadas que están deshabilitadas no tienen ningún impacto en el funcionamiento del sistema operativo.
+## Switch Parameters
 
-Bloaware que se elimina
-3DBuilder , ActiproSoftware , Alarmas , Appconnector , Asphalt8 , Autodesk SketchBook , MSN Money , Comida y bebida , Salud y bienestar , Microsoft News , MSN Sports , MSN Travel , MSN Weather , BioEnrollment, Windows Camera , CandyCrush, CandyCrushSoda, Caesars Slots Free Casino, ContactSupport, CyberLink MediaSuite Essentials, DrawboardPDF, Duolingo, EclipseManager, Facebook, FarmVille 2 Country Escape, Flipboard, Fresh Paint, Primeros pasos, iHeartRadio, King apps, Mapas, March of Empires, Mensajería, Microsoft Office Hub, Microsoft Solitaire Collection, Microsoft Sticky Notas, Minecraft, Netflix, Prueba de velocidad de red, Crucigrama del NYT, Office Sway, OneNote, OneConnect, Pandora, Personas, Teléfono, Phototastic Collage, PicsArt-PhotoStudio, PowerBI, Royal Revolt 2, Shazam, Skype para escritorio, SoundRecorder, TuneInRadio, Twitter , aplicaciones de comunicaciones de Windows, comentarios de Windows, centro de comentarios de Windows, lista de lectura de Windows, XboxApp, Xbox Game CallableUI, proveedor de identidad de Xbox, Zune Music, Zune Video.
+There are 3 switch parameters in the `Windows10SysPrepDebloater.ps1` script.
 
-enlace de descarga rápida
-iwr -useb https://git.io/debloat|iex
+- **`-SysPrep`**, which runs the command within a function: get-appxpackage | remove-appxpackage. This is useful since some administrators need that command to run first in order for machines to be able to properly provision the apps for removal.
 
-Lista de permitidos y lista de bloqueo
-Puede haber cierta confusión, pero cuando se utiliza la lista de permitidos/lista de bloqueo, la marca de verificación significa que está en la lista de bloqueo y que se eliminará.
+- **`-Debloat`**, switch parameter which does as it suggests. It runs the following functions: Start-Debloat, Remove-Keys, and Protect-Privacy.
+Remove-Keys removes registry keys leftover that are associated with the bloatware apps listed above, but not removed during the Start-Debloat function.
 
-Créditos
-Gracias a a60wattfish , abulgatz , xsisbest , Damian , Vikingat-RAGE , usuario de Reddit /u/GavinEke y a todos los contribuyentes ( https://github.com/Sycnex/Windows10Debloater/graphs/contributors ) por las sugerencias, el código, cambios y correcciones en las que todos ustedes han trabajado arduamente y compartido amablemente. ¡Todos habéis hecho un trabajo fantástico!
+- **`-Privacy`**, adds and/or changes registry keys to stop some telemetry functions, stops Cortana from being used as your Search Index, disables "unnecessary" scheduled tasks, and more.
+
+***This script will remove the bloatware from Windows 10 when using Remove-AppXPackage/Remove-AppXProvisionedPackage, and then delete specific registry keys that are were not removed beforehand. For best results, this script should be run before a user profile is configured, otherwise, you will likely see that apps that should have been removed will remain, and if they are removed you will find broken tiles on the start menu.***
+
+## These registry keys are
+
+EclipseManager,
+ActiproSoftwareLLC,
+Microsoft.PPIProjection,
+Microsoft.XboxGameCallableUI
+
+You can choose to either 'Debloat' or 'Revert'. Depending on your choice, either one will run specific code to either debloat your Windows 10 machine.
+
+## The Debloat switch choice runs the following functions
+
+Debloat,
+Remove-Keys,
+Protect-Privacy,
+Stop-EdgePDF (If chosen)
+
+## The Revert switch choice runs the following functions
+
+Revert-Changes,
+Enable-EdgePDF
+
+The Revert option reinstalls the bloatware and changes your registry keys back to default. 
+
+## The scheduled tasks that are disabled are
+
+XblGameSaveTaskLogon,
+XblGameSaveTask,
+Consolidator,
+UsbCeip,
+DmClient
+
+These scheduled tasks that are disabled have absolutely no impact on the function of the OS.
+
+## Bloatware that is removed
+
+[3DBuilder](https://www.microsoft.com/en-us/p/3d-builder/9wzdncrfj3t6),
+[ActiproSoftware](https://www.microsoft.com/en-us/p/actipro-universal-windows-controls/9wzdncrdlvzp),
+[Alarms](https://www.microsoft.com/en-us/p/windows-alarms-clock/9wzdncrfj3pr?activetab=pivot:overviewtab),
+[Appconnector](https://www.microsoft.com/en-us/p/connector/9wzdncrdjmlj?activetab=pivot:overviewtab),
+[Asphalt8](https://www.microsoft.com/en-us/p/asphalt-8-racing-game-drive-drift-at-real-speed/9wzdncrfj26j?activetab=pivot:overviewtab),
+[Autodesk SketchBook](https://www.microsoft.com/en-us/p/autodesk-sketchbook/9nblggh4vzw5),
+[MSN Money](https://www.microsoft.com/en-us/p/msn-money/9wzdncrfhv4v?activetab=pivot:overviewtab),
+[Food And Drink](https://www.microsoft.com/en-us/p/food-and-drink/9nblggh0jhqg),
+[Health And Fitness](https://www.microsoft.com/en-us/p/health-fitness-free/9wzdncrcwcdp),
+[Microsoft News](https://www.microsoft.com/en-us/p/microsoft-news/9wzdncrfhvfw#activetab=pivot:overviewtab),
+[MSN Sports](https://www.microsoft.com/en-us/p/msn-sports/9wzdncrfhvh4?activetab=pivot:overviewtab),
+[MSN Travel](https://www.microsoft.com/en-us/p/msn-travel/9wzdncrfj3ft?activetab=pivot:overviewtab),
+[MSN Weather](https://www.microsoft.com/en-us/p/msn-weather/9wzdncrfj3q2?activetab=pivot:overviewtab),
+BioEnrollment,
+[Windows Camera](https://www.microsoft.com/en-us/p/windows-camera/9wzdncrfjbbg#activetab=pivot:overviewtab),
+CandyCrush,
+CandyCrushSoda,
+Caesars Slots Free Casino,
+ContactSupport,
+CyberLink MediaSuite Essentials,
+DrawboardPDF,
+Duolingo,
+EclipseManager,
+Facebook,
+FarmVille 2 Country Escape,
+Flipboard,
+Fresh Paint,
+Get started,
+iHeartRadio,
+King apps,
+Maps,
+March of Empires,
+Messaging,
+Microsoft Office Hub,
+Microsoft Solitaire Collection,
+Microsoft Sticky Notes,
+Minecraft,
+Netflix,
+Network Speed Test,
+NYT Crossword,
+Office Sway,
+OneNote,
+OneConnect,
+Pandora,
+People,
+Phone,
+Phototastic Collage,
+PicsArt-PhotoStudio,
+PowerBI,
+Royal Revolt 2,
+Shazam,
+Skype for Desktop,
+SoundRecorder,
+TuneInRadio,
+Twitter,
+Windows communications apps,
+Windows Feedback,
+Windows Feedback Hub,
+Windows Reading List,
+XboxApp,
+Xbox Game CallableUI,
+Xbox Identity Provider,
+Zune Music,
+Zune Video.
+
+## Quick download link
+
+`iwr -useb https://git.io/debloat|iex`
+
+## Allowlist and Blocklist
+There may be some confusion, but when using the Allowlist/Blocklist, the checkmark means it is on the blocklist, and that it will be removed.
+
+## Credits
+
+Thank you to [a60wattfish](https://github.com/a60wattfish), [abulgatz](abulgatz), [xsisbest](https://github.com/xsisbest), [Damian](https://github.com/Damian), [Vikingat-RAGE](https://github.com/Vikingat-RAGE), Reddit user [/u/GavinEke](https://github.com/GavinEke), and all of the contributors (https://github.com/Sycnex/Windows10Debloater/graphs/contributors) for the suggestions, code, changes, and fixes that you have all graciously worked hard on and shared! You all have done a fantastic job!
